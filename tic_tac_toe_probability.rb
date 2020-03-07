@@ -82,6 +82,18 @@ def print_summary(arr, p)
   arr.each(&method(:print_board))
 end
 
+# show any possible way a piece can win, including arrangements in which the other piece wins
+%w[vertical horizontal diagonal].each do |method|
+  define_method "#{method}_wins" do |arr, p|
+    tmp = arr.dup
+    tmp.delete_if { |game| !send("#{method}_win", game.to_s, p.to_s) }
+    puts "#{tmp.size}/#{arr.size} possible #{method} wins for #{p}"
+    puts("---------------------------------")
+    tmp.each(&method(:print_board))
+    puts("---------------------------------")
+  end
+end
+
 pieces = %w[x x x x x o o o o]
 possible_games = permutations(pieces).to_a
 
@@ -104,16 +116,6 @@ print_summary(removed_ties, 'x')
 # y = filter_wins(x, 'x')
 #
 #
-# # show any possible way a piece can win, including arrangements in which the other piece wins
-# %w[vertical horizontal diagonal].each do |method|
-#   define_method "#{method}_wins" do |arr, p|
-#     tmp = arr.dup
-#     tmp.delete_if { |game| !send("#{method}_win", game.to_s, p.to_s) }
-#     puts "#{tmp.size}/#{arr.size} possible #{method} wins for #{p}"
-#     puts("---------------------------------")
-#     tmp.each(&method(:print_board))
-#     puts("---------------------------------")
-#   end
-# end
+
 # diagonal_wins possible_games, 'o'
 # horizontal_wins possible_games, 'x'
