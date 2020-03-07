@@ -13,5 +13,5 @@ The last bit of code utilizes metaprogramming to show any possible way a piece c
 including arrangements in which the other piece wins
 It defines methods to find vertical/horizontal/diagonal wins for 'x' or 'o'
 e.g. 
-diagonal_wins possible_games, 'o'
+diagonal_wins possible_games, 'o' 
 Would display the number of ways 'o' can win diagonally
