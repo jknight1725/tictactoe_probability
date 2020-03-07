@@ -97,25 +97,32 @@ end
 pieces = %w[x x x x x o o o o]
 possible_games = permutations(pieces).to_a
 
-puts "x wins and o never wins 62/126"
+# 62/126 .4921 
+puts "x wins and o never wins"
 removed_o_wins = filter_wins(possible_games, 'o')
 removed_ties = filter_no_wins(removed_o_wins, 'x')
 print_summary(removed_ties, 'x')
 
-# puts "o wins and x never wins 12/126"
+# 12/126 .0962
+# puts "o wins and x never wins"
 # removed_x_wins = filter_wins(possible_games, 'x')
 # removed_ties = filter_no_wins(removed_x_wins, 'o')
 # print_summary(removed_ties, 'o')
-#
-# puts "both x and o win 36/126"
+
+# 36/126 .2857
+# puts "both x and o win"
 # x = filter_no_wins(possible_games, 'o')
 # y = filter_no_wins(x, 'x')
 # puts("--------------------------------------")
-# puts "tie, no winners 16/126"
+
+# 16/126 .1270
+# puts "no winners"
 # x = filter_wins(possible_games, 'o')
 # y = filter_wins(x, 'x')
-#
-#
+
+# show a random game possibility
+#print_board(possible_games.sample)
+
 
 # diagonal_wins possible_games, 'o'
 # horizontal_wins possible_games, 'x'
