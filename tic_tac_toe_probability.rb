@@ -122,7 +122,3 @@ print_summary(removed_ties, 'x')
 
 # show a random game possibility
 #print_board(possible_games.sample)
-
-
-# diagonal_wins possible_games, 'o'
-# horizontal_wins possible_games, 'x'
