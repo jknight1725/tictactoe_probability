@@ -69,9 +69,9 @@ end
 def filter_no_wins(arr, p)
   tmp = arr.dup
   tmp.delete_if do |game|
-    !horizontal_win(game, p) &&
-      !vertical_win(game, p) &&
-      !diagonal_win(game, p)
+    !(horizontal_win(game, p) ||
+        vertical_win(game, p) ||
+        diagonal_win(game, p))
   end
   puts "After removing non winning '#{p}' games, total = #{tmp.size}"
   tmp
