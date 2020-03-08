@@ -1,7 +1,7 @@
 # tictactoe_probability
 Prints colorized visualization of all answers to challenge from https://fivethirtyeight.com/features/how-good-are-you-at-guess-who/
 
-Explanation
+Explanation:
 There are 9 choose 5 = 126 ways to place the x's and o's on the board. 
 To find the amount of 'x' wins without any 'o' wins we must filter possibilities which do not result in a win for x
 and any results that result in a win for o.
